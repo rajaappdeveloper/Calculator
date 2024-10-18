@@ -1,6 +1,6 @@
 package com.raja.calculator
 
-class CalcOperations {
+public class CalcOperations {
 
     fun Add(a: Int, b: Int): Int {
         return a + b
