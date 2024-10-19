@@ -1,5 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
+//    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
 //    alias(libs.plugins.maven.publish)
     id("maven-publish")
@@ -10,11 +11,11 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.raja.calculator"
+//        applicationId = "com.raja.calculator"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+//        versionCode = 1
+//        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,6 +32,25 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+
+//    publishLibraryVariants("release")
+    defaultPublishConfig("release")
+}
+
+
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+//            components["release"]
+//            from(components["CalculatorFunctions"])
+            groupId = "com.github.rajaappdeveloper"
+            artifactId = "CalculatorFunctions"
+            version = "v1.0.8"
+
+//            artifact(tasks.getByName("jar"))
+        }
     }
 }
 
