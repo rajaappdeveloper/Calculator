@@ -42,12 +42,12 @@ android {
 
 publishing {
     publications {
-        create<MavenPublication>("release") {
+        create<MavenPublication>("mavenJava") {
 //            components["release"]
 //            from(components["CalculatorFunctions"])
             groupId = "com.github.rajaappdeveloper"
             artifactId = "CalculatorFunctions"
-            version = "v1.0.8"
+            version = "v1.1.1"
 
 //            artifact(tasks.getByName("jar"))
         }
