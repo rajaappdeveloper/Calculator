@@ -1,8 +1,6 @@
-package com.raja.calculator
+package com.raja.calculatorfunctions
 
-import com.raja.calculatorfunctions.CalcFunctions
-
-public class CalcOperations {
+class CalcFunctions {
 
     fun Add(a: Int, b: Int): Int {
         return a + b
@@ -13,11 +11,7 @@ public class CalcOperations {
     }
 
     fun Multiply(a: Int, b: Int): Int {
-
-        val abc = CalcFunctions().Multiply(4, 3)
-
         return a * b
     }
-
 
 }
