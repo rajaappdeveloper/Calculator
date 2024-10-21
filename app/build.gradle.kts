@@ -46,7 +46,7 @@ publishing {
 //            components["release"]
 //            from(components["CalculatorFunctions"])
             groupId = "com.github.rajaappdeveloper"
-            artifactId = "CalculatorFunctions"
+            artifactId = "Calculator"
             version = "v1.1.1"
 
 //            artifact(tasks.getByName("jar"))
