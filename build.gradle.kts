@@ -6,6 +6,8 @@ plugins {
 //    alias(libs.plugins.android.tools) apply false
 }
 
+apply(plugin = "maven-publish")
+
 buildscript{
     dependencies{
 

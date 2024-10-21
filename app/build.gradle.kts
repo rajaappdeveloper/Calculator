@@ -6,6 +6,12 @@ plugins {
     id("maven-publish")
 }
 
+//apply(plugin = "com.android.library")
+//apply(plugin = "org.jetbrains.kotlin.android")
+//apply(plugin = "maven-publish")
+
+//apply(plugin = "maven-publish")
+
 android {
     namespace = "com.raja.calculator"
     compileSdk = 34
@@ -42,15 +48,39 @@ android {
 
 publishing {
     publications {
-        create<MavenPublication>("mavenJava") {
+
+        /*create<MavenPublication>("mavenJava") {
 //            components["release"]
 //            from(components["CalculatorFunctions"])
+            from(components["java"])
             groupId = "com.github.rajaappdeveloper"
             artifactId = "Calculator"
             version = "v1.1.1"
 
-//            artifact(tasks.getByName("jar"))
+        }*/
+
+        create<MavenPublication>("ReleaseAar") {
+            groupId = "com.github.rajaappdeveloper"
+            artifactId = "CalculatorFunctions"
+            version = "1.1.3"
+            afterEvaluate {
+                artifact(tasks.getByName("bundleReleaseAar"))
+            }
         }
+
+        /*create<MavenPublication>("release") {
+            from(components["release"])
+            groupId = "com.github.rajaappdeveloper"
+            artifactId = "CalculatorFunctions"
+            version = "v1.1.2"
+        }
+
+        create<MavenPublication>("app") {
+            from(components["release"])
+            groupId = "com.github.rajaappdeveloper"
+            artifactId = "Calculator"
+            version = "v1.1.2"
+        }*/
     }
 }
 
